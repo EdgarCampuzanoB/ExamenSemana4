@@ -14,16 +14,30 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String name;
 
     @OneToMany(targetEntity = Content.class)
-    @Column(name = "contents")
+    @JoinColumn(name = "content_id")
     private List<Content> contentList;
 
     public Course() {
     }
 
+    public Course(String name, List<Content> contentList) {
+        this.name = name;
+        this.contentList = contentList;
+    }
+
     public Course(List<Content> contentList) {
         this.contentList = contentList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {

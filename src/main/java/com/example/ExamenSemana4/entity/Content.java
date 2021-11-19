@@ -7,7 +7,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "contents")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class Content {
+public class Content {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

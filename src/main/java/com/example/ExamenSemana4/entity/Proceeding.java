@@ -17,8 +17,7 @@ public class Proceeding {
     private Date enrollDate;
     private Integer qualification;
     private Date endDate;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_course", referencedColumnName = "id")
+    @OneToOne(targetEntity = Course.class)
     private Course course;
 
     public Proceeding() {
